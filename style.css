@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Baloo+Da+2:wght@400;500;600;700&family=Josefin+Slab:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600&family=Mulish:ital,wght@0,200;0,300;0,400;1,200;1,300;1,400&display=swap');
 
-@import url('<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />');
+@import url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/css/all.min.css);
 
 *{
     margin: 0;
@@ -37,9 +37,47 @@
     height: .1rem;
     background-color: #fff;
     box-shadow: 0.1rem 0.1rem 1px #000;
+    transition: transform .5s;
        
 }
+.show-menu #line1{
+    transform: rotate(45deg) translate(.2rem, .4rem);
+}
 
+.show-menu #line2{
+    opacity: 0;
+    visibility: hidden;
+}
+
+.show-menu #line3{
+    transform: rotate(-45deg) translate(.1rem, -.55rem);;
+}
+.hamburguer span{
+    position: absolute;
+    left: 3rem;
+    height: 2rem;
+    width: 6rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #a044ff;
+    color: #fff;
+    font-family: var(--font-action);
+    opacity: 0 ;
+}
+
+.hamburguer span::before{
+    content: "" ;
+    position: absolute;
+    border-right: .5rem solid #a044ff;
+    border-top: .5rem solid transparent;
+    border-left: .5rem solid transparent;
+    border-bottom: .5rem solid transparent;
+    left: -1rem;
+}
+.show-menu .hamburguer:hover span{
+    opacity: 1;
+}
 header{
     width: 100%;
     height: 100vh;
@@ -129,6 +167,7 @@ header{
     position: fixed;
     top: 0;
     right: -20rem;
+    transition: all 1s;
     }
 
 .show-menu .sidebar{
@@ -148,7 +187,7 @@ header{
 }
 .menu-link{
 
-    font-family: var(--font-action);
+    font-family: var(--font-primary);
     font-size: 2rem;
     color: #555;
     transition: color 1s;
@@ -167,7 +206,7 @@ header{
 }
 .social-media i{
     background-color:#6a3093;
-    color:rgba(255, 255, 255, 1);
+    color:rgba(255,255,255,1);
     height: 2.5rem;
     width: 2.5rem;
     font-size: 1.5rem;
@@ -176,9 +215,7 @@ header{
     align-items: center;
     border-radius: 50%;
     transition: background-color 1s;
-
-
 }
 .social-media i:hover{
-    background-color: #9e54e7;
+    background-color: #a044ff;
 }
